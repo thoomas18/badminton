@@ -15,10 +15,11 @@
         <span class="logo-text">SpeedBall & Badminton Vauchellois</span>
       </div>
       <nav>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
+        <button class="burger" aria-label="Menu">&#9776;</button>
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Accueil</a></li>
           <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="activites.html" class="active">Activités</a></li>
+          <li><a href="activites.html">Activités</a></li>
           <li><a href="evenements.html">Événements</a></li>
           <li><a href="inscription.html">Inscription</a></li>
           <li><a href="galerie.html">Galerie</a></li>
@@ -44,5 +45,15 @@
       <p>© 2025 SpeedBall & Badminton Vauchellois – 200 rue Verte, Vauchelles-les-Quesnoy</p>
     </div>
   </footer>
+  <script>
+    const burger = document.querySelector('.burger');
+    const navList = document.querySelector('.nav-list');
+    burger.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-list a').forEach(link => {
+      link.addEventListener('click', () => navList.classList.remove('open'));
+    });
+  </script>
 </body>
 </html>
