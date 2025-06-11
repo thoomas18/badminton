@@ -56,13 +56,17 @@
     </div>
   </footer>
   <script>
-  const burger = document.querySelector('.burger');
-  const navList = document.querySelector('.nav-list');
-  burger.addEventListener('click', () => {
-    navList.classList.toggle('open');
-  });
-  document.querySelectorAll('.nav-list a').forEach(link => {
-    link.addEventListener('click', () => navList.classList.remove('open'));
+  document.addEventListener('DOMContentLoaded', function() {
+    const burger = document.querySelector('.burger');
+    const navList = document.querySelector('.nav-list');
+    if (burger && navList) {
+      burger.addEventListener('click', () => {
+        navList.classList.toggle('open');
+      });
+      document.querySelectorAll('.nav-list a').forEach(link => {
+        link.addEventListener('click', () => navList.classList.remove('open'));
+      });
+    }
   });
 </script>
 </body>
